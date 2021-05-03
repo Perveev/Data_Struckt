@@ -22,6 +22,26 @@ public:
     void remove(int data);
 };
 
+class Queue {
+    List list;
+public:
+    void push(int data);
+    void remove();
+    void print();
+};
+
+void Queue::push(int data) {
+    list.pushBack(data);
+}
+
+void Queue::remove() {
+    list.popFront();
+}
+
+void Queue::print() {
+    list.print();
+}
+
 class Stack{
    Node* top;
 public:
@@ -176,7 +196,6 @@ int main() {
     for (int i = 0; i < 5; ++i) {
         list.pushBack(i);
     }
-    list.print();
     list.remove(3);
     list.print();
 
@@ -187,5 +206,11 @@ int main() {
     stack.pop();
     stack.peek();
 
+    Queue queue;
+    for (int i = 0; i < 5; ++i) {
+        queue.push(i);
+    }
+    queue.remove();
+    queue.print();
     return 0;
 }
